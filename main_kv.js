@@ -552,14 +552,14 @@ class APNs {
             const AUTH_KEY_ID = 'LH4T9V5U4R'
             // Generate the JWT token
             const JWT_ISSUE_TIME = util.getTimestamp()
-            const JWT_HEADER = btoa(JSON.stringify({ alg: 'ES256', kid: AUTH_KEY_ID })).replace('+', '-').replace('/', '_').replace(/=+$/, '')
-            const JWT_CLAIMS = btoa(JSON.stringify({ iss: TEAM_ID, iat: JWT_ISSUE_TIME })).replace('+', '-').replace('/', '_').replace(/=+$/, '')
+            const JWT_HEADER = btoa(JSON.stringify({ alg: 'ES256', kid: AUTH_KEY_ID })).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+            const JWT_CLAIMS = btoa(JSON.stringify({ iss: TEAM_ID, iat: JWT_ISSUE_TIME })).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
             const JWT_HEADER_CLAIMS = JWT_HEADER + '.' + JWT_CLAIMS
             // Sign
             const jwtArray = new TextEncoder().encode(JWT_HEADER_CLAIMS)
             const signature = await crypto.subtle.sign({ name: 'ECDSA', hash: 'SHA-256' }, privateKey, jwtArray)
             const signatureArray = new Uint8Array(signature)
-            const JWT_SIGNED_HEADER_CLAIMS = btoa(String.fromCharCode(...signatureArray)).replace('+', '-').replace('/', '_').replace(/=+$/, '')
+            const JWT_SIGNED_HEADER_CLAIMS = btoa(String.fromCharCode(...signatureArray)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
             const AUTHENTICATION_TOKEN = JWT_HEADER_CLAIMS + '.' + JWT_SIGNED_HEADER_CLAIMS
 
             return AUTHENTICATION_TOKEN
