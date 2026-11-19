@@ -531,7 +531,7 @@ class Handler {
                 }
 
                 if ((response.status === 410) || ((response.status === 400) && (message.includes('BadDeviceToken')))) {
-                    await db.saveDeviceTokenByKey(parameters.device_key, '')
+                    await db.invalidateDeviceToken(parameters.device_key, deviceToken)
                 }
 
                 return new Response(JSON.stringify({
@@ -969,6 +969,17 @@ class Database {
             } else {
                 cachedDeviceToken[key] = device_token
             }
+
+            return result
+        }
+
+        // Clear the token APNs rejected, unless the device has registered a newer one since it was cached
+        this.invalidateDeviceToken = async (key, token) => {
+            const device_key = (key || '').replace(/[^a-zA-Z0-9]/g, '') || '_PLACE_HOLDER_'
+            const query = "UPDATE `devices` SET `token` = '' WHERE `key` = ? AND `token` = ?"
+            const result = await db.prepare(query).bind(device_key, token).run()
+
+            delete cachedDeviceToken[device_key]
 
             return result
         }
