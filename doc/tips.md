@@ -74,7 +74,7 @@ DELETE FROM devices WHERE token = 'deleted';
 
 ### Set Auto Increasement Sequence
 
-Replace desired_value with desiered value
+Replace desired_value with desired value
 
 ```
 UPDATE sqlite_sequence SET seq = desired_value WHERE name = 'devices';
@@ -85,7 +85,7 @@ UPDATE sqlite_sequence SET seq = desired_value WHERE name = 'devices';
 Shift IDs by distance
 
 ```
-UPDATE devices SET id = id - desiered_distance WHERE id > desiered_index;
+UPDATE devices SET id = id - desired_distance WHERE id > desired_index;
 ```
 
 Shift IDs at where ID is Uncontinious

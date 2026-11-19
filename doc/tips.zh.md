@@ -85,7 +85,7 @@ UPDATE sqlite_sequence SET seq = desired_value WHERE name = 'devices';
 将某一ID之后的ID向前移动
 
 ```
-UPDATE devices SET id = id - desiered_distance WHERE id > desiered_index;
+UPDATE devices SET id = id - desired_distance WHERE id > desired_index;
 ```
 
 移动不连续的ID, 每次移动一个不连续ID
