@@ -72,12 +72,12 @@ DELETE FROM devices WHERE token = '0000test0device0token0000';
 DELETE FROM devices WHERE token = 'deleted';
 ```
 
-### 设置AUTOINCREACE的值
+### 设置AUTOINCREMENT的值
 
-将 desiered_value 替换为想要的值
+将 desired_value 替换为想要的值
 
 ```
-UPDATE sqlite_sequence SET seq = desiered_value WHERE name = 'devices';
+UPDATE sqlite_sequence SET seq = desired_value WHERE name = 'devices';
 ```
 
 ### 移动ID

@@ -42,7 +42,7 @@ Copy Code From [main.js](../main.js) or [main_kv.js](../main_kv.js) and Paste It
     <img src="images/setup/Screenshot from 2024-02-19 08-30-20.png">
 </p>
 
-If it's First Deploy and Has no Device in Database, Modify `isAllowNewDevice` to `true` in order to allow Registeration
+If it's First Deploy and Has no Device in Database, Modify `ALLOW_NEW_DEVICE` to `true` in order to allow Registration
 
 <p align="center">
     <img src="images/setup/Screenshot from 2024-02-19 08-33-54.png">
@@ -78,7 +78,7 @@ Click `Workers & Pages` &rarr; `OverView` &rarr; `The Worker You Just Created`
 
 Then Click `Settings` &rarr; `Variables` 
 
-Click `D1 Database Bindings` or `KV Namesapce Bindings` Base on D1 or KV Version
+Click `D1 Database Bindings` or `KV Namespace Bindings` Base on D1 or KV Version
 
 Then Click `Edit Variables` &rarr; `Add Binding`
 
@@ -105,7 +105,7 @@ Then Click `Save`
 
 If you are using KV Version, goto [Register](#register)
 
-After Modify `isAllowQueryNums` to `ture`, Send Request on path `/info`
+After Modify `ALLOW_QUERY_NUMS` to `true`, Send Request on path `/info`
 
 <p align="center">
     <img src="images/setup/Screenshot from 2024-02-19 08-34-28.png">

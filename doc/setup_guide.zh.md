@@ -42,7 +42,7 @@
     <img src="images/setup/Screenshot from 2024-02-19 08-30-20.png">
 </p>
 
-如果是第一次部署且数据库中没有设备, 需要将 `isAllowNewDevice` 改为 `true` 以允许新设备注册
+如果是第一次部署且数据库中没有设备, 需要将 `ALLOW_NEW_DEVICE` 改为 `true` 以允许新设备注册
 
 <p align="center">
     <img src="images/setup/Screenshot from 2024-02-19 08-33-54.png">
@@ -78,7 +78,7 @@
 
 点击 `Settings` &rarr; `Variables` 
 
-根据代码版本点击 `D1 Database Bindings` 或 `KV Namesapce Bindings`
+根据代码版本点击 `D1 Database Bindings` 或 `KV Namespace Bindings`
 
 点击 `Edit Variables` &rarr; `Add Binding`
 
@@ -105,7 +105,7 @@
 
 如果使用KV版本, 跳转至 [注册](#注册)
 
-把 `isAllowQueryNums` 修改为 `ture`, 使用 `/info` 发送请求
+把 `ALLOW_QUERY_NUMS` 修改为 `true`, 使用 `/info` 发送请求
 
 <p align="center">
     <img src="images/setup/Screenshot from 2024-02-19 08-34-28.png">

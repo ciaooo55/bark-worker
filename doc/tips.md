@@ -74,10 +74,10 @@ DELETE FROM devices WHERE token = 'deleted';
 
 ### Set Auto Increasement Sequence
 
-Replace desiered_value with desiered value
+Replace desired_value with desiered value
 
 ```
-UPDATE sqlite_sequence SET seq = desiered_value WHERE name = 'devices';
+UPDATE sqlite_sequence SET seq = desired_value WHERE name = 'devices';
 ```
 
 ### Shift IDs
